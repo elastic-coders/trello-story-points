@@ -1,0 +1,42 @@
+.trello-story-points-card-points {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  display: inline-block;
+  padding: 2px;
+  line-height: 1em;
+  vertical-align: middle;
+  border-radius: 3px;
+  color: #555;
+  font-size: 12px;
+  text-shadow: 0 0 2px white;
+  opacity: 0.6;
+}
+
+.trello-story-points-card-tags {
+  display: inline-block;
+}
+
+.trello-story-points-card-tags > li {
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 2px 3px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  vertical-align: 2px;
+  border-radius: 3px;
+  margin-right: 1px;
+}
+
+.trello-story-points-list-total {
+  position: absolute;
+  top: 7px;
+  right: 30px;
+  display: inline-block;
+  padding: 2px;
+  background: #e3e3e3;
+  border-radius: 3px;
+  color: #666;
+  line-height: 1em;
+}

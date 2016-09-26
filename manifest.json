@@ -1,0 +1,22 @@
+{
+  "name": "Trello Story Points",
+  "short_name": "SCRUM Trello",
+  "description": "Add story points to Trello project lists",
+  "version": "1.0.0",
+  "author": "Nicola Peduzzi",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://trello.com/*"
+      ],
+      "js": [
+        "trello-story-points.js"
+      ],
+      "css": [
+        "trello-story-points.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "manifest_version" : 2
+}
