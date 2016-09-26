@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  const board = document.getElementById('board');
-  if (!board) {
+  const contentEl = document.getElementById('content');
+  if (!contentEl) {
     return;
   }
 
@@ -45,15 +45,14 @@
 
   const update = debounce(200, () => {
     // Stop update
-    board.removeEventListener('DOMSubtreeModified', update);
+    contentEl.removeEventListener('DOMSubtreeModified', update);
 
-    // Restore pristine conditions
-    Array
-      .from(document.getElementsByClassName(listTotalPointsClassName))
-      .forEach(element => element.remove());
+    // Get the board
+    const boardEl = document.getElementById('board');
 
-    Array
-      .from(board.getElementsByClassName('list-cards'))
+    // Add points and tags
+    if (boardEl) Array
+      .from(boardEl.getElementsByClassName('list-cards'))
       .forEach(listCards => {
         const listTotalPoints = Array
           .from(listCards.getElementsByClassName('list-card'))
@@ -129,15 +128,19 @@
           })
           .reduce((sum, p) => sum + p, 0);
 
-        const listTotal = document.createElement('div');
+        const listEl = listCards.parentNode;
+        const listTotal = (
+          listEl.getElementsByClassName(listTotalPointsClassName)[0] ||
+          document.createElement('div')
+        );
         listTotal.className = listTotalPointsClassName;
         listTotal.innerText = listTotalPoints;
         // TODO add this to the header
-        listCards.parentNode.insertBefore(listTotal, listCards);
+        listEl.insertBefore(listTotal, listCards);
       });
 
     // Restore update
-    board.addEventListener('DOMSubtreeModified', update);
+    contentEl.addEventListener('DOMSubtreeModified', update);
   });
 
   // Start
