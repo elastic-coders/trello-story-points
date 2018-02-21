@@ -31,12 +31,18 @@
 
 .trello-story-points-list-total {
   position: absolute;
-  top: 7px;
-  right: 30px;
+  top: 10px;
+  right: 35px;
   display: inline-block;
-  padding: 2px;
+  padding: 2px 3px;
   background: #e3e3e3;
   border-radius: 3px;
   color: #666;
   line-height: 1em;
+}
+
+/* Trello style changes */
+
+.with-trello-story-points .distinct-list .list-header {
+  padding-right: 60px;
 }

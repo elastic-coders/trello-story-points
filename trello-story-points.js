@@ -6,6 +6,8 @@
     return;
   }
 
+  contentEl.classList.add('with-trello-story-points');
+
   const pointsRegEx = /^\(([\d\.]+)\)(.+)/;
   const tagsRegEx = /^\s*(\[.+\])(.+)/;
   const listTotalPointsClassName = 'trello-story-points-list-total';
